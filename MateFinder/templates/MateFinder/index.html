@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if origin_list %}
+    <ul>
+    {% for item in origin_list %}
+        <li><a href="/MateFinder/{{ item.id }}/">{{ item.image_url }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No items.</p>
+{% endif %}
+</body>
+</html>
