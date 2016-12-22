@@ -3,7 +3,9 @@ This is the next generation of dating recommendation system developed by Jinyang
 You can find the report in this repo called MateFinder-TheNextGenerationofDatingRecommendationSystem.pdf
 
 ## How to access our website?
-We have hosted our website on AWS Elestic Beanstalk -> [http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder](http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder)      
+We have hosted our website on AWS Elestic Beanstalk -> [http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder](http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder)  
+Note: If you cannot open this link, this is because we have stopped our server due to high cost.
+
 If you want to run locally, you must first install all the dependencies following the guide below. And then you can find detail instructions in section __how to run locally__.
 
 ## Install Dependencies
