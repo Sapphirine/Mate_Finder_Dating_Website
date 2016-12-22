@@ -17,3 +17,19 @@ Then you are able to install all dependencies through pip:
 + Cloudinary API (for image storage): pip install cloudinary
 
 In case you have Anaconda, you want to resolve the python path. I have encountered a lot of problems working with both Anaconda python and Django, but I finally resolved all problems. Please contact me through my Columbia email if you encountered any problems. I might be able to help! By the way, here is a great [article](http://www.alirazabhayani.com/2014/12/psycopg2-macos-x-library-not-loaded.html) for one of the problem I encountered millions of times. 
+
+## How to run locally?
+You want to clone this file to your laptop or desktop.  
+Then open a terminal and cd to this folder.  
+Then run the following command:
+```
+python manage.py runserver
+```
+You will get a lot of messages. And at the very last lines, you got a message something like:
+```
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+```
+Copy and paste the server address (might not be identical in your case) to the browser, and then you will find the index page.
+
+## Ideas behind this website
