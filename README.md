@@ -4,7 +4,7 @@ You can find the report in this repo called MateFinder-TheNextGenerationofDating
 
 ## How to access our website?
 We have hosted our website on AWS Elestic Beanstalk -> [http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder](http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder)  
-Note: If you cannot open this link, this is because we have stopped our server due to high cost. In this case, please refer to our demo or contact us. 
+Note: If you cannot open this link, this is because we have stopped our server due to high cost. In this case, please refer to our demo or contact us. Or you can see some screenshots at the very bottom of this README file.
 
 If you want to run locally, you must first install all the dependencies following the guide below. And then you can find detail instructions in section __how to run locally__.
 
