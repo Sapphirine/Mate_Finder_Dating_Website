@@ -70,13 +70,14 @@ These are the only exceptions when using this API. In general, this is a quite p
 We would like to thank Prof. Lin for the fantastic lecture. We would also like to thank all the teaching assistants that helped us with our final project, especially on using PySpark.
 
 ## DataSet
-You can find all the photo here:
-http://faculty.chicagobooth.edu/bernd.wittenbrink/cfd/index.html     
-http://www.ee.columbia.edu/~cylin/course/bigdata/images/     
+You can find all the photo here:   
+Chicago Face Dataset: http://faculty.chicagobooth.edu/bernd.wittenbrink/cfd/index.html       
+Big Data Anlytics Student Profile Pictures: http://www.ee.columbia.edu/~cylin/course/bigdata/images/      
+OkCupid Profile data: https://github.com/rudeboybert/JSE_OkCupid    
    
 ## Reference:
 Online Dating Recommendations: Matching Markets and Learning Preferences  
-https://github.com/rudeboybert/JSE_OkCupid  
+ 
 
 
 
