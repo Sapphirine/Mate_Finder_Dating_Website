@@ -2,6 +2,11 @@
 This is the next generation of dating recommendation system developed by Jinyang Yu(jy2803), Lyujia Zhang(lz2467) and Chuqiao Ren(cr2826) at Columbia University in the city of New York (GroupID: 201612-62)     
 You can find the report in this repo called MateFinder-TheNextGenerationofDatingRecommendationSystem.pdf
 
+## Technical Overview
+![technical overview](https://renchuqiao.github.io/2016/12/22/project-image/overall_tech.png)
+The figure above demonstrate the process for our web application. Both processed categorical data as well as the detailed profile data with image url are stored in AWS RDS MySQL database waiting for query. Once the user provides the questionnaire answer and upload a photo, the photo will be stored to Cloudinary and a unique image URL will be returned. This will be used in Microsoft Face API to detect new face. All other information will be stored in the memory, and Python Spark will query the processed categorical data from database and build the kmeans model. The model will then be interpreted by scikit-learn and it will then find the closest cluster for the given user profile information. The resulted cluster information will then be passed to Microsoft Face API. In the Microsoft API, the user’s face will be compared to all faces that belong to this cluster, and we will display the top matches (normally less than 10 recommendation results). We used Python Django to connect database with frontend, and we used HTML5, CSS and JavaScript to design the webpage in order to give the best user-experience. We have uploaded our website to AWS Elastic Beanstalk for public usage.
+
+
 ## How to access our website?
 We have hosted our website on AWS Elestic Beanstalk -> [http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder](http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder)  
 Note: If you cannot open this link, this is because we have stopped our server due to high cost. In this case, please refer to our demo or contact us. Or you can see some screenshots at the very bottom of this README file.
@@ -34,11 +39,6 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 Copy and paste the server address (might not be identical in your case) to the browser, and then you will find the index page.
-
-## Ideas behind this website
-The figure below demonstrate the process for our web application. Both processed categorical data as well as the detailed profile data with image url are stored in AWS RDS MySQL database waiting for query. Once the user provides the questionnaire answer and upload a photo, the photo will be stored to Cloudinary and a unique image URL will be returned. This will be used in Microsoft Face API to detect new face. All other information will be stored in the memory, and Python Spark will query the processed categorical data from database and build the kmeans model. The model will then be interpreted by scikit-learn and it will then find the closest cluster for the given user profile information. The resulted cluster information will then be passed to Microsoft Face API. In the Microsoft API, the user’s face will be compared to all faces that belong to this cluster, and we will display the top matches (normally less than 10 recommendation results). We used Python Django to connect database with frontend, and we used HTML5, CSS and JavaScript to design the webpage in order to give the best user-experience. We have uploaded our website to AWS Elastic Beanstalk for public usage.
-
-![technical overview](https://renchuqiao.github.io/2016/12/22/project-image/overall_tech.png)
 
 ## Screenshot of the running website
 The welcome page:
