@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>MATE FINDER - BIG DATA ANALYTICS</title>
+  <link href="{% static 'MateFinder/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'MateFinder/css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'MateFinder/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'MateFinder/css/lightbox.css' %}" rel="stylesheet">
+  <link href="{% static 'MateFinder/css/main.css' %}" rel="stylesheet">
+  <link id="css-preset" href="{% static 'MateFinder/css/presets/preset1.css' %}" rel="stylesheet">
+  <link href="{% static 'MateFinder/css/responsive.css' %}" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="{% static 'MateFinder/images/favicon.ico' %}">
+</head><!--/head-->
+
+<body>
+
+<section>
+<div class="container">
+  <div class="row">
+    <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+      <h1>Recommendation Lists</h1>
+      <p><b>Here's your TOP match!</b></p>
+    </div>
+  </div>
+  <div class="recommendationlist">
+    <div class="row">
+        {% for object in objects %}
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-image">
+                <img class="img-responsive" src={{ object.image_url }} alt="">
+              </div>
+              <div class="member-info">
+                <h3>Age: {{ object.age }}, Zodiac: {{ object.zodiac }}</h3>
+                <h4>{{ object.education }}</h4>
+                  <ul>
+                      <li>Height: {{ object.height }}</li>
+                      <li>Drink: {{ object.drink }}</li>
+                      <li>Smoke: {{ object.smoke }}</li>
+                  </ul>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+{#      <div class="col-sm-3">#}
+{#        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">#}
+{#          <div class="member-image">#}
+{#            <img class="img-responsive" src="images/recommend/2.jpg" alt="">#}
+{#          </div>#}
+{#          <div class="member-info">#}
+{#            <h3>Xu</h3>#}
+{#            <h4>Software Engineer, 27 years old</h4>#}
+{#            <p>Hi, my name is Xu, and I am a software engineer in Bay area. I am looking for girls with master degree or above!</p>#}
+{#          </div>#}
+{#          <div class="social-icons">#}
+{#            <ul>#}
+{#              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>#}
+{#              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>#}
+{#              <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#      <div class="col-sm-3">#}
+{#        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="800ms">#}
+{#          <div class="member-image">#}
+{#            <img class="img-responsive" src="images/recommend/3.jpg" alt="">#}
+{#          </div>#}
+{#          <div class="member-info">#}
+{#            <h3>Dean</h3>#}
+{#            <h4>UI/UX Developer, 29 years old</h4>#}
+{#            <p>Greetings! My name is Dean, and I am a web designer. I like hiking, and I am a tennis player. I like to have someone playing tennis with me. Please don't hesitate to contact me here.</p>#}
+{#          </div>#}
+{#          <div class="social-icons">#}
+{#            <ul>#}
+{#              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>#}
+{#              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>#}
+{#              <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#      <div class="col-sm-3">#}
+{#        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">#}
+{#          <div class="member-image">#}
+{#            <img class="img-responsive" src="images/recommend/4.jpg" alt="">#}
+{#          </div>#}
+{#          <div class="member-info">#}
+{#            <h3>Daniel</h3>#}
+{#            <h4>Student, 25 years old</h4>#}
+{#            <p>Hello! My name is Daniel, and I am a Ph.D candidate in New York City. I like to read all kinds of books, and I like girls who share similar reading topics with me. My birthday is coming soon, and I am looking for someone to join my birthday party.</p>#}
+{#          </div>#}
+{#          <div class="social-icons">#}
+{#            <ul>#}
+{#              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>#}
+{#              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>#}
+{#              <li><a class="rss" href="#"><i class="fa fa-rss"></i></a></li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+    </div>
+  </div>
+</div>
+</section>
+
+<script type="text/javascript" src="{% static 'MateFinder/js/jquery.js' %}"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/jquery.inview.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/wow.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/mousescroll.js' %}"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/smoothscroll.js' %}"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/jquery.countTo.js' %}"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/lightbox.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'MateFinder/js/main.js' %}"></script>
+
+</body>
+</html>
