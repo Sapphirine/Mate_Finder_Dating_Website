@@ -7,9 +7,9 @@ The figure above demonstrate the process for our web application. Both processed
 
 ## File Structure
     .
-    ├── MateFinder_BigDataAnalytics                   # Python Django Files (you want to run locally from this folder)
-    ├── docs                                          # Documentation files (contains presentation PPT and final report)
-    ├── data_process                                  # Python files that preprocess profile data and image URL
+    ├── MateFinder_BigDataAnalytics                # Python Django Files (you want to run locally from this folder)
+    ├── docs                                       # Documentation files (contains presentation PPT and final report)
+    ├── data_process                               # Python files that preprocess profile data and image URL
     ├── LICENSE
     └── README.md
 
