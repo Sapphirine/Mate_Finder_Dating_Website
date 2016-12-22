@@ -1,10 +1,17 @@
 # MateFinder - The Next Generation of Dating Recommender
 This is the next generation of dating recommendation system developed by Jinyang Yu(jy2803), Lyujia Zhang(lz2467) and Chuqiao Ren(cr2826) at Columbia University in the city of New York (GroupID: 201612-62)     
-You can find the report in this repo called MateFinder-TheNextGenerationofDatingRecommendationSystem.pdf
 
 ## Technical Overview
 ![technical overview](https://renchuqiao.github.io/2016/12/22/project-image/overall_tech.png)
 The figure above demonstrate the process for our web application. Both processed categorical data as well as the detailed profile data with image url are stored in AWS RDS MySQL database waiting for query. Once the user provides the questionnaire answer and upload a photo, the photo will be stored to Cloudinary and a unique image URL will be returned. This will be used in Microsoft Face API to detect new face. All other information will be stored in the memory, and Python Spark will query the processed categorical data from database and build the kmeans model. The model will then be interpreted by scikit-learn and it will then find the closest cluster for the given user profile information. The resulted cluster information will then be passed to Microsoft Face API. In the Microsoft API, the user’s face will be compared to all faces that belong to this cluster, and we will display the top matches (normally less than 10 recommendation results). We used Python Django to connect database with frontend, and we used HTML5, CSS and JavaScript to design the webpage in order to give the best user-experience. We have uploaded our website to AWS Elastic Beanstalk for public usage.
+
+## File Structure
+    .
+    ├── MateFinder_BigDataAnalytics                   # Python Django Files (you want to run locally from this folder)
+    ├── docs                                          # Documentation files (contains presentation PPT and final report)
+    ├── data_process                                  # Python files that preprocess profile data and image URL
+    ├── LICENSE
+    └── README.md
 
 
 ## How to access our website?
@@ -17,18 +24,18 @@ If you want to run locally, you must first install all the dependencies followin
 Here we assume that you have already installed python (ver 2 or ver 3).  
 You want to first install pip through this stand-alone pip installer through python -> [link](https://pip.pypa.io/en/latest/installing/#installing-with-get-pip-py)  
 Then you are able to install all dependencies through pip:
-+ django: pip install Django
-+ numpy, scipy: pip install numpy/scipy
-+ scikit-learn: pip install -U scikit-learn
-+ MySQL python: pip install MySQL-python
-+ Microsoft Cognitive API (for face recognition): pip install cognitive_face
-+ Cloudinary API (for image storage): pip install cloudinary
++ django: `pip install Django`
++ numpy, scipy: `pip install numpy/scipy`
++ scikit-learn: `pip install -U scikit-learn`
++ MySQL python: `pip install MySQL-python`
++ Microsoft Cognitive API (for face recognition): `pip install cognitive_face`
++ Cloudinary API (for image storage): `pip install cloudinary`
 
 In case you have Anaconda, you want to resolve the python path. I have encountered a lot of problems working with both Anaconda python and Django, but I finally resolved all problems. Please contact me through my Columbia email if you encountered any problems. I might be able to help! By the way, here is a great [article](http://www.alirazabhayani.com/2014/12/psycopg2-macos-x-library-not-loaded.html) for one of the problem I encountered millions of times. 
 
 ## How to run locally?
 You want to clone this file to your laptop or desktop.  
-Then open a terminal and cd to this folder.  
+Then open a terminal and cd to `MateFinder_BigDataAnalytics` folder.  
 Then run the following command:
 ```
 python manage.py runserver
