@@ -49,3 +49,30 @@ After finishing filling out all the informations and uploaded your photo, please
 ![recommendation](https://renchuqiao.github.io/2016/12/22/project-image/recommendation_list.png)
 If there is no matches, the following page will be shown:
 ![no match](https://renchuqiao.github.io/2016/12/22/project-image/cannot_find.png)
+
+## Visualization of the data
+We have plot the age distribution, height distribution in order to understand the data.
+![age](https://renchuqiao.github.io/2016/12/22/project-image/age.png)
+![height](https://renchuqiao.github.io/2016/12/22/project-image/height.png)
+We used pySpark to analyze our data and plot the K vs. Error in order to determine the number of clusters:
+![kmeans_error](https://renchuqiao.github.io/2016/12/22/project-image/kmeans_error.png)
+Based on Elbow rule, we chose K = 15 as our final size of clusters.
+
+## Issues with Microsoft Face API
+There are several exceptions when uploading all the images to the Microsoft API. For example, the following two faces returned error messages saying that the API detected more than 1 face.
+![more_than_one_face_1](https://renchuqiao.github.io/2016/12/21/female/CFD-WF-034-061-HC.jpg)
+![more_than_one_face_2](https://renchuqiao.github.io/2016/12/21/female/CFD-WF-214-122-N.jpg)
+Also, the API cannot find any face for the following image:
+![no_face](https://renchuqiao.github.io/2016/12/21/female/jp3495.jpg)
+These are the only exceptions when using this API. In general, this is a quite powerful API.
+
+## Acknowledgement
+We would like to thank Prof. Lin for the fantastic lecture. We would also like to thank all the teaching assistants that helped us with our final project, especially on using PySpark.
+
+## Reference:
+Online Dating Recommendations: Matching Markets and Learning Preferences
+https://github.com/rudeboybert/JSE_OkCupid
+http://faculty.chicagobooth.edu/bernd.wittenbrink/cfd/index.html
+http://www.ee.columbia.edu/~cylin/course/bigdata/images/
+
+
