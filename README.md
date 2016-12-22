@@ -7,11 +7,24 @@ The figure above demonstrate the process for our web application. Both processed
 
 ## File Structure
     .
-    ├── MateFinder_BigDataAnalytics                # Python Django Files (you want to run locally from this folder)
-    ├── docs                                       # Documentation files (contains presentation PPT and final report)
-    ├── data_process                               # Python files that preprocess profile data and image URL
+    ├── MateFinder_BigDataAnalytics        # Python Django Files (you want to run locally from this folder)
+    ├── docs                               # Documentation files (contains presentation PPT and final report)
+    ├── data_process                       # Python files that preprocess profile data and image URL
     ├── LICENSE
     └── README.md
+### MateFinder_BigDataAnalytics Folder Structure
+    .
+    ├── ...
+    ├── MateFinder_BigDataAnalytics         # Python Django Files (you want to run locally from this folder)
+    │   ├── MateFinder                      # The application folder (all the code is here)
+                ├── view.py                 # Controller connecting frontend and backend and do kmeans and image processing
+                ├── model.py                # Connecting to AWS MySQL database
+                ├── static                  # This folder contains all the CSS and JS files
+                └── templates               # This folder contains HTML templates
+    │   ├── MateFinder_BigDataAnalytics     # Main website folder (contains settings and URLs)
+    │   └── manager.py                      # python file comes with Django that can manage the project
+    └── ...
+### Data Process folder
 
 
 ## How to access our website?
