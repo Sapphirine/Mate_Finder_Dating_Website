@@ -27,6 +27,7 @@
 <body>
 
 <section>
+{% if hasRecom %}
 <div class="container">
   <div class="row">
     <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
@@ -129,6 +130,17 @@
     </div>
   </div>
 </div>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+        <h1>Sorry! We don't have any recommendation for you</h1>
+      <p><b>This is because our database is not large enough yet. Please refer our website to your friend so that we can have more registered users. Come back later!</b></p>
+    </div>
+  </div>
+</div>
+    <p style="text-align:center;"><img class="display" src="{% static 'MateFinder/images/recommend/Sad_Face_Emoji.png' %}" height="100" width="100"></p>
+{% endif %}
 </section>
 
 <script type="text/javascript" src="{% static 'MateFinder/js/jquery.js' %}"></script>

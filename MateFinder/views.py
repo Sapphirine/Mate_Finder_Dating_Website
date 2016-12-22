@@ -164,9 +164,16 @@ def submit(request):
         else:
             objects.append(object)
 
+    num_recom = len(objects)
+    hasRecom = False
+    if num_recom == 0:
+        hasRecom = False
+    else:
+        hasRecom = True
 
     #Present Recommendation
-    context = {'objects': objects}
+    context = {'objects': objects,
+               'hasRecom': hasRecom}
 
     return render(request, 'MateFinder/submit.html', context)
 
