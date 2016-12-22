@@ -17,15 +17,28 @@ The figure above demonstrate the process for our web application. Both processed
     ├── ...
     ├── MateFinder_BigDataAnalytics         # Python Django Files (you want to run locally from this folder)
     │   ├── MateFinder                      # The application folder (all the code is here)
-                ├── view.py                 # Controller connecting frontend and backend and do kmeans and image processing
-                ├── model.py                # Connecting to AWS MySQL database
-                ├── static                  # This folder contains all the CSS and JS files
-                └── templates               # This folder contains HTML templates
+    │   │       ├── view.py                 # Controller connecting frontend and backend and do kmeans and image processing
+    │   │       ├── model.py                # Connecting to AWS MySQL database
+    │   │       ├── static                  # This folder contains all the CSS and JS files
+    │   │       └── templates               # This folder contains HTML templates
     │   ├── MateFinder_BigDataAnalytics     # Main website folder (contains settings and URLs)
     │   └── manager.py                      # python file comes with Django that can manage the project
     └── ...
 ### Data Process folder
-
+    .
+    ├── ...
+    ├── data_process                        # Python files that preprocess profile data and image URL
+    │   ├── addImageURL.py                  # Append image URL to the csv file
+    │   ├── analyzeData.py                  # step3.1: This file will analyze raw data for partition purpose.
+    │   ├── generate_photo_markdown.py      # Create a markdown file that will be used in Github I/O
+    │   ├── kmeans.py                       # Use `Spark` to do kmeans
+    │   ├── kmeansPredict.py                # Use `Spark` to predict new data
+    │   ├── plotError.py                    # Plot K vs. error plot
+    │   ├── prepareImage.py                 # Add photo to Microsoft Cognitive Server
+    │   ├── prepareKmeans.py                # Step 3.2: modify the text data to categorical data for each entry.
+    │   ├── preprocess.py                   # Step 1: Extract features we would like to cover in the kmeans.
+    │   └── removeEmpty.py                  # Step 2: Remove entrys (rows) that has empty fields (cell) and abnormal heights
+    └── ...
 
 ## How to access our website?
 We have hosted our website on AWS Elestic Beanstalk -> [http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder](http://matefinder-env.xmx2nui3gd.us-west-2.elasticbeanstalk.com/MateFinder)  
@@ -34,7 +47,7 @@ Note: If you cannot open this link, this is because we have stopped our server d
 If you want to run locally, you must first install all the dependencies following the guide below. And then you can find detail instructions in section __how to run locally__.
 
 ## Install Dependencies
-Here we assume that you have already installed python (ver 2 or ver 3).  
+Here we assume that you have already installed python (ver 2 or ver 3) and Spark.  
 You want to first install pip through this stand-alone pip installer through python -> [link](https://pip.pypa.io/en/latest/installing/#installing-with-get-pip-py)  
 Then you are able to install all dependencies through pip:
 + django: `pip install Django`
@@ -43,6 +56,7 @@ Then you are able to install all dependencies through pip:
 + MySQL python: `pip install MySQL-python`
 + Microsoft Cognitive API (for face recognition): `pip install cognitive_face`
 + Cloudinary API (for image storage): `pip install cloudinary`
++ Seaborn (to plot pretty figures): `pip install seaborn`
 
 In case you have Anaconda, you want to resolve the python path. I have encountered a lot of problems working with both Anaconda python and Django, but I finally resolved all problems. Please contact me through my Columbia email if you encountered any problems. I might be able to help! By the way, here is a great [article](http://www.alirazabhayani.com/2014/12/psycopg2-macos-x-library-not-loaded.html) for one of the problem I encountered millions of times. 
 
