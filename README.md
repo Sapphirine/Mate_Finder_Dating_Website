@@ -36,6 +36,14 @@ Copy and paste the server address (might not be identical in your case) to the b
 ## Ideas behind this website
 The figure below demonstrate the process for our web application. Both processed categorical data as well as the detailed profile data with image url are stored in AWS RDS MySQL database waiting for query. Once the user provides the questionnaire answer and upload a photo, the photo will be stored to Cloudinary and a unique image URL will be returned. This will be used in Microsoft Face API to detect new face. All other information will be stored in the memory, and Python Spark will query the processed categorical data from database and build the kmeans model. The model will then be interpreted by scikit-learn and it will then find the closest cluster for the given user profile information. The resulted cluster information will then be passed to Microsoft Face API. In the Microsoft API, the user’s face will be compared to all faces that belong to this cluster, and we will display the top matches (normally less than 10 recommendation results). We used Python Django to connect database with frontend, and we used HTML5, CSS and JavaScript to design the webpage in order to give the best user-experience. We have uploaded our website to AWS Elastic Beanstalk for public usage.
 
-![technical overview]()
+![technical overview](https://renchuqiao.github.io/2016/12/22/project-image/overall_tech.png)
 
 ## Screenshot of the running website
+The welcome page:
+![welcome page](https://renchuqiao.github.io/2016/12/22/project-image/welcome_page.png)
+After you hit start, it will transit to the suvery page:
+![suvery page](https://renchuqiao.github.io/2016/12/22/project-image/survey_page.png)
+After finishing filling out all the informations and uploaded your photo, please hit match and then you will be directed to the following recommendation page. On the recommendation page, you will find the top match based on your profile information and your photo.
+![recommendation](https://renchuqiao.github.io/2016/12/22/project-image/recommendation_list.png)
+If there is no matches, the following page will be shown:
+![no match](https://renchuqiao.github.io/2016/12/22/project-image/cannot_find.png)
