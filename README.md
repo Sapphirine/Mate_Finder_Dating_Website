@@ -1,5 +1,6 @@
 # MateFinder - The Next Generation of Dating Recommender
-This is the next generation of dating recommendation system developed by Jinyang Yu(jy2803), Lyujia Zhang(lz2467) and Chuqiao Ren(cr2826) at Columbia University in the city of New York (GroupID: 201612-62)     
+This is the next generation of dating recommendation system developed by Jinyang Yu(jy2803), Lyujia Zhang(lz2467) and Chuqiao Ren(cr2826) at Columbia University in the city of New York (GroupID: 201612-62)  
+Youtube Link of the Demo: https://www.youtube.com/watch?v=s0jdQnAJM_c&feature=youtu.be
 
 ## Technical Overview
 ![technical overview](https://renchuqiao.github.io/2016/12/22/project-image/overall_tech.png)
