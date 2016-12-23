@@ -92,11 +92,15 @@ We used pySpark to analyze our data and plot the K vs. Error in order to determi
 ![kmeans_error](https://renchuqiao.github.io/2016/12/22/project-image/kmeans_error.png)
 Based on Elbow rule, we chose K = 15 as our final size of clusters.
 
+## Face Recognization Result
+![face](https://renchuqiao.github.io/2016/12/22/project-image/correct_detection_lz2467.png)  
+The image above shows the face detected by the Microsoft Face API.
+
 ## Issues with Microsoft Face API
 There are several exceptions when uploading all the images to the Microsoft API. For example, the following two faces returned error messages saying that the API detected __more than 1 face__.
-![more_than_one_face_1](https://renchuqiao.github.io/2016/12/21/female/CFD-WF-034-061-HC.jpg)
-![more_than_one_face_2](https://renchuqiao.github.io/2016/12/21/female/CFD-WF-214-122-N.jpg)
-Also, the API __cannot find any face__ for the following image:
+![more_than_one_face_1](https://renchuqiao.github.io/2016/12/22/project-image/error_detection_1.png)
+![more_than_one_face_2](https://renchuqiao.github.io/2016/12/22/project-image/error_detection_2.png)
+Also, the API __cannot find any face__ for the following image:  
 ![no_face](https://renchuqiao.github.io/2016/12/21/female/jp3495.jpg)   
 These are the only exceptions when using this API. In general, this is a quite powerful API.
 
